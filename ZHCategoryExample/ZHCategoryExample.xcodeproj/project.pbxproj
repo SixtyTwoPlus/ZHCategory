@@ -97,21 +97,21 @@
 		489E2B4929E50DFA009F19A3 /* ZHCategory */ = {
 			isa = PBXGroup;
 			children = (
+				489E2B4C29E50DFA009F19A3 /* NSString+ZHCategory.h */,
+				489E2B5329E50DFA009F19A3 /* NSString+ZHCategory.m */,
+				489E2B4F29E50DFA009F19A3 /* UIApplication+ZHCategory.h */,
+				489E2B5629E50DFA009F19A3 /* UIApplication+ZHCategory.m */,
+				489E2B5029E50DFA009F19A3 /* UIButton+ZHCategory.h */,
+				489E2B5529E50DFA009F19A3 /* UIButton+ZHCategory.m */,
+				489E2B5729E50DFA009F19A3 /* UIColor+ZHCategory.h */,
+				489E2B4E29E50DFA009F19A3 /* UIColor+ZHCategory.m */,
+				489E2B5129E50DFA009F19A3 /* UIControl+ZHTCategory.h */,
 				489E2B4A29E50DFA009F19A3 /* UIControl+ZHTCategory.m */,
 				489E2B4B29E50DFA009F19A3 /* UIImage+ZHCategory.h */,
-				489E2B4C29E50DFA009F19A3 /* NSString+ZHCategory.h */,
-				489E2B4D29E50DFA009F19A3 /* UIView+ZHCategory.m */,
-				489E2B4E29E50DFA009F19A3 /* UIColor+ZHCategory.m */,
-				489E2B4F29E50DFA009F19A3 /* UIApplication+ZHCategory.h */,
-				489E2B5029E50DFA009F19A3 /* UIButton+ZHCategory.h */,
-				489E2B5129E50DFA009F19A3 /* UIControl+ZHTCategory.h */,
-				489E2B5229E50DFA009F19A3 /* ZHCategory.h */,
-				489E2B5329E50DFA009F19A3 /* NSString+ZHCategory.m */,
 				489E2B5429E50DFA009F19A3 /* UIImage+ZHCategory.m */,
-				489E2B5529E50DFA009F19A3 /* UIButton+ZHCategory.m */,
-				489E2B5629E50DFA009F19A3 /* UIApplication+ZHCategory.m */,
-				489E2B5729E50DFA009F19A3 /* UIColor+ZHCategory.h */,
 				489E2B5829E50DFA009F19A3 /* UIView+ZHCategory.h */,
+				489E2B4D29E50DFA009F19A3 /* UIView+ZHCategory.m */,
+				489E2B5229E50DFA009F19A3 /* ZHCategory.h */,
 			);
 			name = ZHCategory;
 			path = ../../ZHCategory;

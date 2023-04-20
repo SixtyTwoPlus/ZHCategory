@@ -15,6 +15,8 @@ typedef void(^ZHViewTagGestureBlock)(UITapGestureRecognizer *gesture);
 
 - (void)zh_setShadowColor:(UIColor *)color offset:(CGSize)offset opacity:(CGFloat)opacity;
 
+- (void)zh_setShadowColor:(UIColor *)color offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius;
+
 - (void)zh_addTagGestureWithActionBlock:(ZHViewTagGestureBlock)actionBlock;
 
 - (CGFloat)zh_width;

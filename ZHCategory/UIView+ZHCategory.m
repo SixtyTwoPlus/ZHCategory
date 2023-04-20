@@ -21,6 +21,16 @@
     self.layer.shadowRadius = self.layer.cornerRadius;
 }
 
+- (void)zh_setShadowColor:(UIColor *)color offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius{
+    if(self.layer.masksToBounds){
+        self.layer.masksToBounds = NO;
+    }
+    self.layer.shadowColor = color.CGColor;
+    self.layer.shadowOffset = offset;
+    self.layer.shadowOpacity = opacity;
+    self.layer.shadowRadius = radius;
+}
+
 static ZHViewTagGestureBlock block;
 
 - (void)zh_addTagGestureWithActionBlock:(ZHViewTagGestureBlock)actionBlock{
