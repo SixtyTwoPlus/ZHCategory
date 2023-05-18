@@ -7,6 +7,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger,ZHButtonLayoutType){
+    ZHButtonLayoutTypeImgTop,
+    ZHButtonLayoutTypeImgLeft,
+    ZHButtonLayoutTypeImgRight,
+    ZHButtonLayoutTypeImgBottom,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (ZHCategory)
@@ -14,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)zh_addConfigurationWithLayout:(NSDirectionalRectEdge)edge margin:(CGFloat)margin;
 
 - (void)zh_toucExpend:(CGFloat)size;
+
+- (void)zh_layoutWithType:(ZHButtonLayoutType)type margin:(CGFloat)margin;
 
 @end
 

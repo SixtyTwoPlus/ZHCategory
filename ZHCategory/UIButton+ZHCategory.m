@@ -6,6 +6,8 @@
 //
 
 #import "UIButton+ZHCategory.h"
+#import "NSString+ZHCategory.h"
+#import "UIView+ZHCategory.h"
 #import <objc/runtime.h>
 
 @implementation UIButton (ZHCategory)
@@ -21,6 +23,51 @@
     [str addAttribute:NSForegroundColorAttributeName value:self.titleLabel.textColor range:range];
     config.attributedTitle = str;
     [self setConfiguration:config];
+}
+
+- (void)zh_layoutWithType:(ZHButtonLayoutType)type margin:(CGFloat)margin{
+    CGSize imgSize = [self imageForState:self.state].size;
+    CGSize titleSize = [[self titleForState:self.state] zh_sizeWithFont:self.titleLabel.font];
+    [self layoutIfNeeded];
+    self.titleLabel.backgroundColor = UIColor.whiteColor;
+    self.imageView.backgroundColor = UIColor.blueColor;
+    switch (type) {
+        case ZHButtonLayoutTypeImgTop:{
+            CGFloat halfMargin = margin/2;
+            CGFloat imgTop = -(titleSize.height/2 + halfMargin);
+            CGFloat imgLeft = titleSize.width/2;
+            CGFloat titleTop = imgSize.height/2 + halfMargin;
+            CGFloat titleLeft = -imgSize.width/2;
+            self.imageEdgeInsets = UIEdgeInsetsMake(imgTop, imgLeft, -imgTop, -imgLeft);
+            self.titleEdgeInsets = UIEdgeInsetsMake(titleTop, titleLeft + margin/2, -titleTop, -titleLeft);
+        }
+            break;
+        case ZHButtonLayoutTypeImgLeft:{
+            CGFloat spacing = margin/2; // 定义图片和标题之间的间距
+               self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing, 0, spacing);
+               self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, -spacing);
+        }
+            break;
+        case ZHButtonLayoutTypeImgRight:{
+            CGFloat imgLeft = titleSize.width + margin;
+            CGFloat titleLeft = -imgSize.width - margin;
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, imgLeft, 0, -imgLeft);
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, titleLeft, 0, -titleLeft);
+        }
+            break;
+        case ZHButtonLayoutTypeImgBottom:{
+            CGFloat halfMargin = margin / 2;
+            CGFloat imgTop = titleSize.height/2 + halfMargin;
+            CGFloat imgLeft = titleSize.width/2;
+            CGFloat titleTop = -(imgSize.height/2 + halfMargin);
+            CGFloat titleLeft = -imgSize.width/2;
+            self.imageEdgeInsets = UIEdgeInsetsMake(imgTop, imgLeft, -imgTop, -imgLeft);
+            self.titleEdgeInsets = UIEdgeInsetsMake(titleTop, titleLeft, -titleTop, -titleLeft);
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 static char topNameKey;

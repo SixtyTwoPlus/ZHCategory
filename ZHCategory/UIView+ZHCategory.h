@@ -19,19 +19,17 @@ typedef void(^ZHViewTagGestureBlock)(UITapGestureRecognizer *gesture);
 
 - (void)zh_addTagGestureWithActionBlock:(ZHViewTagGestureBlock)actionBlock;
 
-- (CGFloat)zh_width;
+@property (nonatomic,assign) CGFloat zh_width;
+@property (nonatomic,assign) CGFloat zh_height;
+@property (nonatomic,assign) CGFloat zh_x;
+@property (nonatomic,assign) CGFloat zh_y;
 
-- (CGFloat)zh_height;
+@property (nonatomic,assign) CGFloat zh_center_x;
+@property (nonatomic,assign) CGFloat zh_center_y;
 
-- (CGFloat)zh_x;
-
-- (CGFloat)zh_y;
-
-- (CGSize)zh_size;
-
-- (CGPoint)zh_origin;
-
-- (CGFloat)zh_widthHeightScale;
+@property (nonatomic,assign) CGSize zh_size;
+@property (nonatomic,assign) CGPoint zh_origin;
+@property (nonatomic,assign,readonly) CGFloat zh_widthHeightScale;
 
 @end
 
