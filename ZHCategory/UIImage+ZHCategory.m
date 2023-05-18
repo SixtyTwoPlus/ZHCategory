@@ -95,4 +95,31 @@
     return size;
 }
 
+- (instancetype)zh_cropImageWith:(CGRect)rect {
+    // 将UIImage转换为CIImage
+    CIImage* inputImage = [CIImage imageWithCGImage:self.CGImage];
+    if (!inputImage) {
+        return self;
+    }
+    
+    // 计算缩放因子并转换坐标系
+    CGFloat scale = inputImage.extent.size.width / self.size.width;
+    CGRect ciRect = CGRectMake(rect.origin.x * scale,
+                               inputImage.extent.size.height - rect.origin.y * scale - rect.size.height * scale,
+                               rect.size.width * scale,
+                               rect.size.height * scale);
+                               
+    // 裁剪图像
+    CIImage *cropedImg = [inputImage imageByCroppingToRect:ciRect];
+    
+    // 将CIImage转换为UIImage
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [context createCGImage:cropedImg fromRect:[cropedImg extent]];
+    
+    UIImage *result = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    
+    return result;
+}
+
 @end

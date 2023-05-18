@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)zh_isNull:(NSString *)str;
 
 - (NSString *)zh_md5String;
-//
+
 - (CGSize)zh_sizeWithFont:(UIFont *)font;
-//指定宽总共文字所占的面积
+
 - (CGSize)zh_sizeWithFont:(UIFont *)font maxWidth:(CGFloat)maxWidth;
 
 - (CGSize)zh_sizeWithAttributes:(NSDictionary *)dict maxWidth:(CGFloat)maxWidth;

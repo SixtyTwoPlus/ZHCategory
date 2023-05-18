@@ -11,13 +11,14 @@
 #import <objc/runtime.h>
 
 @implementation UIButton (ZHCategory)
+
 - (void)zh_addConfigurationWithLayout:(NSDirectionalRectEdge)edge margin:(CGFloat)margin{
     UIButtonConfiguration *config = [UIButtonConfiguration plainButtonConfiguration];
     config.imagePlacement = edge;
     config.imagePadding = margin;
     config.baseBackgroundColor = [UIColor clearColor];
-    config.image = self.imageView.image;
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:self.titleLabel.text];
+    config.image = [self imageForState:self.state];
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:[self titleForState:self.state]];
     NSRange range = NSMakeRange(0, self.titleLabel.text.length);
     [str addAttribute:NSFontAttributeName value:self.titleLabel.font range:range];
     [str addAttribute:NSForegroundColorAttributeName value:self.titleLabel.textColor range:range];
@@ -66,6 +67,15 @@
         default:
             break;
     }
+}
+
+
+- (UIFont *)zh_font{
+    return self.titleLabel.font;
+}
+
+- (void)setZh_font:(UIFont *)font{
+    self.titleLabel.font = font;
 }
 
 static char topNameKey;

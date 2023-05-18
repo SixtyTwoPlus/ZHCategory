@@ -18,11 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (ZHCategory)
 
-- (void)zh_addConfigurationWithLayout:(NSDirectionalRectEdge)edge margin:(CGFloat)margin;
+- (void)zh_addConfigurationWithLayout:(NSDirectionalRectEdge)edge margin:(CGFloat)margin API_AVAILABLE(ios(15.0));
 
 - (void)zh_toucExpend:(CGFloat)size;
 
 - (void)zh_layoutWithType:(ZHButtonLayoutType)type margin:(CGFloat)margin;
+
+- (UIFont *)zh_font;
+
+- (void)setZh_font:(UIFont *)font;
+
 
 @end
 
