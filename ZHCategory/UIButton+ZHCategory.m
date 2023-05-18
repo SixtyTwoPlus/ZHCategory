@@ -29,8 +29,6 @@
     CGSize imgSize = [self imageForState:self.state].size;
     CGSize titleSize = [[self titleForState:self.state] zh_sizeWithFont:self.titleLabel.font];
     [self layoutIfNeeded];
-    self.titleLabel.backgroundColor = UIColor.whiteColor;
-    self.imageView.backgroundColor = UIColor.blueColor;
     switch (type) {
         case ZHButtonLayoutTypeImgTop:{
             CGFloat halfMargin = margin/2;
