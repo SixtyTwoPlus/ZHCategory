@@ -26,6 +26,7 @@
     [button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
     [button zh_layoutWithType:ZHButtonLayoutTypeImgTop margin:5];
     button.zh_center_y = self.view.center.y;
+    button.zh_x = self.view.center.x - 100;
     button.backgroundColor = UIColor.greenColor;
     [self.view addSubview:button];
     
