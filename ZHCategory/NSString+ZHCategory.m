@@ -144,4 +144,16 @@
     return (NSArray *)linesArray;
 }
 
+- (NSInteger)zh_lineOfWithAttributed:(NSDictionary *)dict maxWidth:(CGFloat)maxWidth{
+    CGFloat height = [self zh_sizeWithAttributes:dict maxWidth:maxWidth].height;
+    NSMutableParagraphStyle *style = dict[NSParagraphStyleAttributeName];
+    UIFont *font = dict[NSFontAttributeName];
+    if(!font){
+        return 0;
+    }
+    if(!style){
+        return height / font.pointSize;
+    }
+    return height / (font.pointSize + style.lineSpacing);
+}
 @end

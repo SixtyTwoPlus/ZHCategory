@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray *)zh_inlineWithView:(UITextView *)view opt:(NSDictionary *)dict;
 
+- (NSInteger)zh_lineOfWithAttributed:(NSDictionary *)dict maxWidth:(CGFloat)maxWidth;
+
 @end
 
 NS_ASSUME_NONNULL_END
