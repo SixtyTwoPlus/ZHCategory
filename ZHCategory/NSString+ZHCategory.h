@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSInteger)zh_lineOfWithAttributed:(NSDictionary *)dict maxWidth:(CGFloat)maxWidth;
 
++ (NSString *)zh_detectLanguageOfString:(NSString *)string;
+
 @end
 
 NS_ASSUME_NONNULL_END

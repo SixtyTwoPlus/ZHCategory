@@ -156,4 +156,18 @@
     }
     return height / (font.pointSize + style.lineSpacing);
 }
+
+
++ (NSString *)zh_detectLanguageOfString:(NSString *)string {
+    NSString *language;
+    @try {
+        NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:[NSLinguisticTagger availableTagSchemesForLanguage:@"en"] options:0];
+        [tagger setString:string];
+        language = [tagger dominantLanguage];
+    } @catch (NSException *exception) {
+        NSLog(@"Failed to detect language: %@", exception.reason);
+    }
+    return language;
+}
+
 @end
