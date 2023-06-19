@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'ZHCategory/*'
 
-  s.frameworks   = 'Foundation', 'UIKit'
+  s.frameworks   = 'Foundation', 'UIKit' , 'AVFAudio'
 
   s.requires_arc = true
 
