@@ -17,5 +17,6 @@
 #import "UIApplication+ZHCategory.h"
 #import "NSFileManager+ZHCategory.h"
 #import "AVAudioPCMBuffer+ZHCategory.h"
+#import "NSArray+ZHCategory.h"
 
 #endif /* ZHCategory_h */
