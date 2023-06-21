@@ -20,6 +20,9 @@
 
 - (NSArray *)zh_objectsWithKey:(NSString *)key value:(id)value{
     __weak typeof(self) weakSelf = self;
+    if([self.firstObject isKindOfClass:UIView.class]){
+        return nil;
+    }
     if([NSString zh_isNull:key] || [self.firstObject isKindOfClass:NSString.class] || [self.firstObject isKindOfClass:NSNumber.class]){
         NSMutableArray *arr = [NSMutableArray array];
         for (id obj in self) {
