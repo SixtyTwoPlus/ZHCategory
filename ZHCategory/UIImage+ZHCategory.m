@@ -78,11 +78,14 @@
 }
 
 - (instancetype)zh_scaleToSize:(CGSize)newSize{
-    UIGraphicsBeginImageContextWithOptions(newSize, NO, [UIScreen mainScreen].scale);
-    [self drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();//释放上下文
-    return newImage;
+    CGFloat scaleX = newSize.width / self.size.width;
+    CGFloat scaleY = newSize.height / self.size.height;
+    CIImage *ciimage = [[CIImage alloc]initWithCGImage:self.CGImage];
+    CIImage *scaledImage = [ciimage imageByApplyingTransform:CGAffineTransformMakeScale(scaleX, scaleY)];
+    CGImageRef cgimageRef = [[CIContext new] createCGImage:scaledImage fromRect:scaledImage.extent];
+    UIImage *resultImage = [UIImage imageWithCGImage:cgimageRef];
+    CGImageRelease(cgimageRef);
+    return resultImage;
 }
 
 - (CGSize)zh_sizeScaleWith:(CGFloat)wh scaleType:(ZHScaleSizeType)type{
