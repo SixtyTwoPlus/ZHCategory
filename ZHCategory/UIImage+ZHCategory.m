@@ -81,7 +81,7 @@
     CGFloat scaleX = newSize.width / self.size.width;
     CGFloat scaleY = newSize.height / self.size.height;
     CIImage *ciimage = [[CIImage alloc]initWithCGImage:self.CGImage];
-    CIImage *scaledImage = [ciimage imageByApplyingTransform:CGAffineTransformMakeScale(scaleX, scaleY)];
+    CIImage *scaledImage = [ciimage imageByApplyingTransform:CGAffineTransformMakeScale(scaleX, scaleY) highQualityDownsample:YES];
     CGImageRef cgimageRef = [[CIContext new] createCGImage:scaledImage fromRect:scaledImage.extent];
     UIImage *resultImage = [UIImage imageWithCGImage:cgimageRef];
     CGImageRelease(cgimageRef);
