@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)zh_scaleToSize:(CGSize)newSize;
 
-- (CGSize)zh_sizeScaleWith:(CGFloat)wh scaleType:(ZHScaleSizeType)type;
+- (instancetype)zh_sizeScaleWith:(CGFloat)wh scaleType:(ZHScaleSizeType)type;
 
 - (instancetype)zh_cropImageWith:(CGRect)rect;
 

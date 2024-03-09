@@ -88,14 +88,14 @@
     return resultImage;
 }
 
-- (CGSize)zh_sizeScaleWith:(CGFloat)wh scaleType:(ZHScaleSizeType)type{
+- (instancetype)zh_sizeScaleWith:(CGFloat)wh scaleType:(ZHScaleSizeType)type{
     CGSize imgSize = self.size;
     CGFloat imgProportion = imgSize.width/imgSize.height;
     CGSize size = CGSizeMake(wh, wh/imgProportion);
     if(type == ZHScaleSizeTypeHeight){
         size = CGSizeMake(wh * imgProportion, wh);
     }
-    return size;
+    return [self zh_scaleToSize:size];
 }
 
 - (instancetype)zh_cropImageWith:(CGRect)rect {
