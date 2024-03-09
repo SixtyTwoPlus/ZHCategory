@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ZHCategory"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "this is iOS common category tools"
   s.description  = <<-DESC 'ZHCategory'
                    DESC
