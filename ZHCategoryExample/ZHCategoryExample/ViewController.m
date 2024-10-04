@@ -24,13 +24,10 @@
     [button setTitle:@"历史记录" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:10];
     [button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
-    [button zh_layoutWithType:ZHButtonLayoutTypeImgTop margin:5];
     button.zh_center_y = self.view.center.y;
-    button.zh_x = self.view.center.x - 100;
+    button.zh_center_x = self.view.center.x;
     button.backgroundColor = UIColor.greenColor;
     [self.view addSubview:button];
-    
-    
 }
 
 

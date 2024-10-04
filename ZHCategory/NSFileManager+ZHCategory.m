@@ -12,9 +12,7 @@
 
 @implementation NSFileManager (ZHCategory)
 
-static char dirArrKey;
-
-- (NSArray *)dirArray{
+- (NSArray *)zh_documentFiles{
     return [self subpathsAtPath:DOCMENTPATH];
 }
 
@@ -31,28 +29,10 @@ static char dirArrKey;
     return [self removeItemAtPath:fullPath error:nil];
 }
 
-
-- (CGFloat)zh_dirSizeWithName:(NSString *)name{
-    NSString *fullPath = [DOCMENTPATH stringByAppendingPathComponent:name];
-    NSArray *arr = [self subpathsAtPath:fullPath];
-    CGFloat size = 0;
-    for (NSString *fileName in arr) {
-        NSString *subPath = [fullPath stringByAppendingPathComponent:fileName];
-        NSDictionary *dict = [self attributesOfItemAtPath:subPath error:nil];
-        CGFloat f = [dict[NSFileSize] floatValue] / 1024 / 1024;
-        size += f;
-    }
+- (CGFloat)zh_dirSizeWithPath:(NSString *)path{
+    NSDictionary *dict = [self attributesOfItemAtPath:path error:nil];
+    CGFloat size = [dict[NSFileSize] floatValue] / 1024 / 1024;
     return size;
-}
-
-- (BOOL)zh_copyItemAtPath:(NSString *)srcPath toDir:(NSString *)dirName{
-    NSString *path = [[self zh_createDirWithName:dirName] stringByAppendingPathComponent:srcPath.lastPathComponent];
-    return [self copyItemAtPath:srcPath toPath:path error:nil];
-}
-
-- (BOOL)zh_moveItemAtPath:(NSString *)srcPath toDir:(NSString *)dirName{
-    NSString *path = [[self zh_createDirWithName:dirName] stringByAppendingPathComponent:srcPath.lastPathComponent];
-    return [self moveItemAtPath:srcPath toPath:path error:nil];
 }
 
 @end

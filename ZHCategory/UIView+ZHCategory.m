@@ -34,6 +34,7 @@
 static ZHViewTagGestureBlock block;
 
 - (void)zh_addTagGestureWithActionBlock:(ZHViewTagGestureBlock)actionBlock{
+    self.userInteractionEnabled = YES;
     objc_setAssociatedObject(self, &block, actionBlock, OBJC_ASSOCIATION_COPY);
     UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapgestureAction:)];
     [ges setNumberOfTapsRequired:1];

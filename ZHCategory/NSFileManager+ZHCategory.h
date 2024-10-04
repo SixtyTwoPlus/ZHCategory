@@ -11,17 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSFileManager (ZHCategory)
 
-- (NSArray *)dirArray;
+- (NSArray *)zh_documentFiles;
 
-- (BOOL)zh_copyItemAtPath:(NSString *)srcPath toDir:(NSString *)dirName;
-
-- (BOOL)zh_moveItemAtPath:(NSString *)srcPath toDir:(NSString *)dirName;
-
-- (CGFloat)zh_dirSizeWithName:(NSString *)name;
+- (NSString *)zh_createDirWithName:(NSString *)name;
 
 - (BOOL)zh_removeDirWithName:(NSString *)name;
 
-- (NSString *)zh_createDirWithName:(NSString *)name;
+- (CGFloat)zh_dirSizeWithPath:(NSString *)path;
 
 @end
 

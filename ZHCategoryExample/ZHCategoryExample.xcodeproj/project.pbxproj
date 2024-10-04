@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4869AB2C2A167A7B00311C37 /* NSFileManager+ZHCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869AB2B2A167A7B00311C37 /* NSFileManager+ZHCategory.m */; };
-		4869AB2F2A167F0E00311C37 /* AVAudioPCMBuffer+ZHCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869AB2E2A167F0E00311C37 /* AVAudioPCMBuffer+ZHCategory.m */; };
 		489E2B3229E50DE2009F19A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E2B3129E50DE2009F19A3 /* AppDelegate.m */; };
 		489E2B3829E50DE2009F19A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E2B3729E50DE2009F19A3 /* ViewController.m */; };
 		489E2B3B29E50DE2009F19A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489E2B3929E50DE2009F19A3 /* Main.storyboard */; };
@@ -28,8 +27,6 @@
 /* Begin PBXFileReference section */
 		4869AB2A2A167A7B00311C37 /* NSFileManager+ZHCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ZHCategory.h"; sourceTree = "<group>"; };
 		4869AB2B2A167A7B00311C37 /* NSFileManager+ZHCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ZHCategory.m"; sourceTree = "<group>"; };
-		4869AB2D2A167F0E00311C37 /* AVAudioPCMBuffer+ZHCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVAudioPCMBuffer+ZHCategory.h"; sourceTree = "<group>"; };
-		4869AB2E2A167F0E00311C37 /* AVAudioPCMBuffer+ZHCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPCMBuffer+ZHCategory.m"; sourceTree = "<group>"; };
 		489E2B2D29E50DE2009F19A3 /* ZHCategoryExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHCategoryExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489E2B3029E50DE2009F19A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		489E2B3129E50DE2009F19A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,8 +120,6 @@
 				489E2B5229E50DFA009F19A3 /* ZHCategory.h */,
 				4869AB2A2A167A7B00311C37 /* NSFileManager+ZHCategory.h */,
 				4869AB2B2A167A7B00311C37 /* NSFileManager+ZHCategory.m */,
-				4869AB2D2A167F0E00311C37 /* AVAudioPCMBuffer+ZHCategory.h */,
-				4869AB2E2A167F0E00311C37 /* AVAudioPCMBuffer+ZHCategory.m */,
 				48DBE7A72A723F7B00708D52 /* NSObject+ZHCategory.h */,
 				48DBE7A82A723F7B00708D52 /* NSObject+ZHCategory.m */,
 			);
@@ -208,7 +203,6 @@
 				489E2B5B29E50DFA009F19A3 /* UIColor+ZHCategory.m in Sources */,
 				489E2B3229E50DE2009F19A3 /* AppDelegate.m in Sources */,
 				489E2B5C29E50DFA009F19A3 /* NSString+ZHCategory.m in Sources */,
-				4869AB2F2A167F0E00311C37 /* AVAudioPCMBuffer+ZHCategory.m in Sources */,
 				489E2B5A29E50DFA009F19A3 /* UIView+ZHCategory.m in Sources */,
 				489E2B4329E50DE3009F19A3 /* main.m in Sources */,
 				48DBE7A92A723F7B00708D52 /* NSObject+ZHCategory.m in Sources */,

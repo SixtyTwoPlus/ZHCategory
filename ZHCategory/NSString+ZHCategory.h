@@ -22,16 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGSize)zh_sizeWithAttributes:(NSDictionary *)dict maxWidth:(CGFloat)maxWidth;
 
-- (NSInteger)zh_numberOfMixedChineseAndEnglishWords;
-
-- (CGFloat)zh_fontPointSizeWithFrame:(CGSize)frameSize font:(UIFont *)font;
-
-- (NSArray *)zh_inlineWithView:(UITextView *)view opt:(NSDictionary *)dict;
-
-- (NSInteger)zh_lineOfWithAttributed:(NSDictionary *)dict maxWidth:(CGFloat)maxWidth;
-
-+ (NSString *)zh_detectLanguageOfString:(NSString *)string;
-
 @end
 
 NS_ASSUME_NONNULL_END
