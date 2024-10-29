@@ -13,10 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)zh_toucExpend:(CGFloat)size;
 
-- (UIFont *)zh_font;
-
-- (void)zh_setFont:(UIFont *)font;
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -20,13 +20,9 @@
     CGFloat width = 70;
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake((self.view.zh_width - width )/ 2, 100, width, 80)];
-    [button setImage:[UIImage imageNamed:@"top_arrow"] forState:UIControlStateNormal];
-    [button setTitle:@"历史记录" forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:10];
-    [button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
+    [button setImage:[UIImage zh_gradientImage:@[UIColor.redColor,UIColor.blueColor,UIColor.blackColor,UIColor.redColor,UIColor.greenColor] directionType:ZHGradientDirectionVertical] forState:UIControlStateNormal];
     button.zh_center_y = self.view.center.y;
     button.zh_center_x = self.view.center.x;
-    button.backgroundColor = UIColor.greenColor;
     [self.view addSubview:button];
 }
 

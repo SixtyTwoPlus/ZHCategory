@@ -7,6 +7,9 @@
 
 #import "UIImage+ZHCategory.h"
 
+#define kDefaultWidth 200
+#define kDefaultHeight 200
+
 @implementation UIImage (ZHCategory)
 
 + (instancetype)zh_imageFromColor:(UIColor *)color{
@@ -24,12 +27,11 @@
     return theImage;
 }
 
-+ (instancetype)zh_imageCircle:(UIColor *)color radius:(NSInteger)radius{
-    CGSize size = CGSizeMake(radius + 10, radius + 10);
-    UIGraphicsBeginImageContext(size);
++ (instancetype)zh_imageCircle:(UIColor *)color radius:(CGFloat)radius{
+    UIGraphicsBeginImageContext(CGSizeMake(radius * 2, radius * 2));
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextAddArc(context, size.width/2, size.height/2, radius, 0, 2 * M_PI, 1);
+    CGContextAddArc(context, radius, radius, radius, 0, 2 * M_PI, 1);
     CGContextDrawPath(context, kCGPathFill);
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();//释放上下文
@@ -123,6 +125,59 @@
     CGImageRelease(cgImage);
     
     return result;
+}
+
++ (UIImage *)zh_gradientImage:(NSArray <UIColor *> *)colors directionType:(ZHGradientDirection)directionType{
+    return [self zh_gradientImage:colors directionType:directionType option:CGSizeMake(kDefaultWidth, kDefaultHeight)];
+}
+
++ (UIImage *)zh_gradientImage:(NSArray <UIColor *> *)colors directionType:(ZHGradientDirection)directionType option:(CGSize)size
+{
+    NSMutableArray *cgcolors = [NSMutableArray array];
+    NSMutableArray *locations = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < colors.count; i++) {
+        [cgcolors addObject:((__bridge id)colors[i].CGColor)];
+        
+        CGFloat locationValue = (CGFloat)i / (colors.count - 1);
+        [locations addObject:@(locationValue)];
+    }
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = cgcolors;
+    gradientLayer.locations = locations;
+    
+    if (directionType == ZHGradientDirectionHorizontal) {
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(1, 0);
+    }else if (directionType == ZHGradientDirectionVertical){
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(0, 1);
+    }else if (directionType == ZHGradientDirectionDiagonalLeftStart){
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(1, 1);
+    }else if (directionType == ZHGradientDirectionDiagonalRightStart){
+        gradientLayer.startPoint = CGPointMake(0, 1);
+        gradientLayer.endPoint = CGPointMake(1, 0);
+    }
+    
+    gradientLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(gradientLayer.frame.size, NO, 0);
+    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *gradientImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return gradientImage;
+}
+
+@end
+
+
+@implementation UIColor (GradientColor)
+
++ (UIColor *)colorWithColors:(NSArray<UIColor *> *)colors directionType:(ZHGradientDirection)directionType{
+    UIImage *image = [UIImage zh_gradientImage:colors directionType:directionType];
+    return [self colorWithPatternImage:image];
 }
 
 @end

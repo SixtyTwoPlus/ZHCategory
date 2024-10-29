@@ -12,14 +12,6 @@
 
 @implementation UIButton (ZHCategory)
 
-- (UIFont *)zh_font{
-    return self.titleLabel.font;
-}
-
-- (void)zh_setFont:(UIFont *)font{
-    self.titleLabel.font = font;
-}
-
 static char topNameKey;
 static char rightNameKey;
 static char bottomNameKey;
