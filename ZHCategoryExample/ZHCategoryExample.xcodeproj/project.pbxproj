@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4869AB2C2A167A7B00311C37 /* NSFileManager+ZHCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869AB2B2A167A7B00311C37 /* NSFileManager+ZHCategory.m */; };
 		489E2B3229E50DE2009F19A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E2B3129E50DE2009F19A3 /* AppDelegate.m */; };
 		489E2B3829E50DE2009F19A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E2B3729E50DE2009F19A3 /* ViewController.m */; };
 		489E2B3B29E50DE2009F19A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489E2B3929E50DE2009F19A3 /* Main.storyboard */; };
@@ -21,12 +20,11 @@
 		489E2B5D29E50DFA009F19A3 /* UIImage+ZHCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E2B5429E50DFA009F19A3 /* UIImage+ZHCategory.m */; };
 		489E2B5E29E50DFA009F19A3 /* UIButton+ZHCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E2B5529E50DFA009F19A3 /* UIButton+ZHCategory.m */; };
 		489E2B5F29E50DFA009F19A3 /* UIApplication+ZHCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E2B5629E50DFA009F19A3 /* UIApplication+ZHCategory.m */; };
+		48B555682E50815700E61602 /* NSDate+ZHFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B555672E50815700E61602 /* NSDate+ZHFormatter.m */; };
 		48DBE7A92A723F7B00708D52 /* NSObject+ZHCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DBE7A82A723F7B00708D52 /* NSObject+ZHCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4869AB2A2A167A7B00311C37 /* NSFileManager+ZHCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ZHCategory.h"; sourceTree = "<group>"; };
-		4869AB2B2A167A7B00311C37 /* NSFileManager+ZHCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ZHCategory.m"; sourceTree = "<group>"; };
 		489E2B2D29E50DE2009F19A3 /* ZHCategoryExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHCategoryExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489E2B3029E50DE2009F19A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		489E2B3129E50DE2009F19A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,6 +50,8 @@
 		489E2B5629E50DFA009F19A3 /* UIApplication+ZHCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ZHCategory.m"; sourceTree = "<group>"; };
 		489E2B5729E50DFA009F19A3 /* UIColor+ZHCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZHCategory.h"; sourceTree = "<group>"; };
 		489E2B5829E50DFA009F19A3 /* UIView+ZHCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZHCategory.h"; sourceTree = "<group>"; };
+		48B555662E50815700E61602 /* NSDate+ZHFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZHFormatter.h"; sourceTree = "<group>"; };
+		48B555672E50815700E61602 /* NSDate+ZHFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZHFormatter.m"; sourceTree = "<group>"; };
 		48DBE7A72A723F7B00708D52 /* NSObject+ZHCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZHCategory.h"; sourceTree = "<group>"; };
 		48DBE7A82A723F7B00708D52 /* NSObject+ZHCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZHCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,10 +118,10 @@
 				489E2B5829E50DFA009F19A3 /* UIView+ZHCategory.h */,
 				489E2B4D29E50DFA009F19A3 /* UIView+ZHCategory.m */,
 				489E2B5229E50DFA009F19A3 /* ZHCategory.h */,
-				4869AB2A2A167A7B00311C37 /* NSFileManager+ZHCategory.h */,
-				4869AB2B2A167A7B00311C37 /* NSFileManager+ZHCategory.m */,
 				48DBE7A72A723F7B00708D52 /* NSObject+ZHCategory.h */,
 				48DBE7A82A723F7B00708D52 /* NSObject+ZHCategory.m */,
+				48B555662E50815700E61602 /* NSDate+ZHFormatter.h */,
+				48B555672E50815700E61602 /* NSDate+ZHFormatter.m */,
 			);
 			name = ZHCategory;
 			path = ../../ZHCategory;
@@ -197,10 +197,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4869AB2C2A167A7B00311C37 /* NSFileManager+ZHCategory.m in Sources */,
 				489E2B3829E50DE2009F19A3 /* ViewController.m in Sources */,
 				489E2B5F29E50DFA009F19A3 /* UIApplication+ZHCategory.m in Sources */,
 				489E2B5B29E50DFA009F19A3 /* UIColor+ZHCategory.m in Sources */,
+				48B555682E50815700E61602 /* NSDate+ZHFormatter.m in Sources */,
 				489E2B3229E50DE2009F19A3 /* AppDelegate.m in Sources */,
 				489E2B5C29E50DFA009F19A3 /* NSString+ZHCategory.m in Sources */,
 				489E2B5A29E50DFA009F19A3 /* UIView+ZHCategory.m in Sources */,
