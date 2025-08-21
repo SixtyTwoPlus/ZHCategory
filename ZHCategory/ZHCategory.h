@@ -15,6 +15,7 @@
 #import "UIButton+ZHCategory.h"
 #import "UIColor+ZHCategory.h"
 #import "UIApplication+ZHCategory.h"
-#import "NSFileManager+ZHCategory.h"
+#import "NSDate+ZHFormatter.h"
+#import "NSObject+ZHCategory.h"
 
 #endif /* ZHCategory_h */
