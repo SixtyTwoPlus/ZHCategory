@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)stringWithFormat:(NSString *)format locale:(NSString * _Nullable)localeID;
 
+- (NSDate *)dateWithString:(NSString *)dateStr format:(NSString *)format;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -153,10 +153,10 @@
     }else if (directionType == ZHGradientDirectionVertical){
         gradientLayer.startPoint = CGPointMake(0, 0);
         gradientLayer.endPoint = CGPointMake(0, 1);
-    }else if (directionType == ZHGradientDirectionDiagonalLeftStart){
+    }else if (directionType == ZHGradientDirectionLeftStart){
         gradientLayer.startPoint = CGPointMake(0, 0);
         gradientLayer.endPoint = CGPointMake(1, 1);
-    }else if (directionType == ZHGradientDirectionDiagonalRightStart){
+    }else if (directionType == ZHGradientDirectionRightStart){
         gradientLayer.startPoint = CGPointMake(0, 1);
         gradientLayer.endPoint = CGPointMake(1, 0);
     }
@@ -175,8 +175,13 @@
 
 @implementation UIColor (GradientColor)
 
-+ (UIColor *)colorWithColors:(NSArray<UIColor *> *)colors directionType:(ZHGradientDirection)directionType{
++ (UIColor *)zh_colorWithColors:(NSArray<UIColor *> *)colors directionType:(ZHGradientDirection)directionType{
     UIImage *image = [UIImage zh_gradientImage:colors directionType:directionType];
+    return [self colorWithPatternImage:image];
+}
+
++ (UIColor *)zh_colorWithColors:(NSArray<UIColor *> *)colors directionType:(ZHGradientDirection)directionType option:(CGSize)size{
+    UIImage *image = [UIImage zh_gradientImage:colors directionType:directionType option:size];
     return [self colorWithPatternImage:image];
 }
 

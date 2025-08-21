@@ -85,4 +85,10 @@
     return [df stringFromDate:self];
 }
 
+- (NSDate *)dateWithString:(NSString *)dateStr format:(NSString *)format{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateFormat = format;
+    return [df dateFromString:dateStr];
+}
+
 @end

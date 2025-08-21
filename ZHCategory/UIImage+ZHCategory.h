@@ -12,11 +12,15 @@ typedef NS_ENUM(NSInteger,ZHScaleSizeType){
     ZHScaleSizeTypeHeight,
 };
 
+// A ----- B
+// |       |
+// C ----- D
+
 typedef NS_ENUM(NSInteger,ZHGradientDirection){
-    ZHGradientDirectionVertical,
-    ZHGradientDirectionHorizontal,
-    ZHGradientDirectionDiagonalLeftStart,
-    ZHGradientDirectionDiagonalRightStart,
+    ZHGradientDirectionVertical,  //AB - CD
+    ZHGradientDirectionHorizontal, // AC - BD
+    ZHGradientDirectionLeftStart, // A - D
+    ZHGradientDirectionRightStart, // B - D
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -47,7 +51,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor(GradientColor)
 
-+ (UIColor *)colorWithColors:(NSArray <UIColor *> *)colors directionType:(ZHGradientDirection)directionType;
++ (UIColor *)zh_colorWithColors:(NSArray <UIColor *> *)colors directionType:(ZHGradientDirection)directionType;
+
++ (UIColor *)zh_colorWithColors:(NSArray <UIColor *> *)colors directionType:(ZHGradientDirection)directionType option:(CGSize)size;
 
 @end
 

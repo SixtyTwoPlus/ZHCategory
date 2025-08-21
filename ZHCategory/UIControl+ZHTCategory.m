@@ -14,7 +14,7 @@ static ZHControlActionBlock actionBlock;
 
 - (void)zh_addBlock:(ZHControlActionBlock)block withControlEvents:(UIControlEvents)events{
     [self addTarget:self action:@selector(controllAction:) forControlEvents:events];
-    objc_setAssociatedObject(self, &actionBlock, block, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, &actionBlock, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (void)controllAction:(UIControl *)sender{
